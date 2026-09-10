@@ -108,6 +108,22 @@ $$\text{Energy Preserved} = \frac{\sum_{i=1}^k \sigma_i^2}{\sum_{i=1}^r \sigma_i
 
 ## 7. Execution & Verification
 
+
 ### Running the Script
 ```powershell
 python 00_mathematical_foundations/linear_algebra/svd_projection.py
+
+Expected terminal output:
+
+```text
+X shape: (6, 4)
+U shape: (6, 4)
+S shape: (4,)
+Vt shape: (4, 4)
+Projected coordinates (rank-4) shape: (6, 4)
+Reconstructed ambient shape: (6, 4)
+Rank-4 Frobenius error: 0.0000
+Theoretical Eckart-Young error: 0.0000
+Energy preserved: 100.00%
+Errors match: True
+```
