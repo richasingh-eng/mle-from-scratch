@@ -19,22 +19,22 @@ def eval_numerical_gradient(f, x, eps=1e-5):
         
     return grad
 
-    def check_gradient(f, x, analytic_grad):
+def check_gradient(f, x, analytic_grad):
         num_grad=eval_numerical_gradient(f, x)
         rel_error=np.max(np.abs(analytic_grad-num_grad)/
                          (np.maximum(np.abs(analytic_grad), np.abs(num_grad))+1e-15))
         print(f"Relative error: {rel_error:.2e}")
         assert rel_error < 1e-5, "Gradcheck failed!"
-    if __name__ == "__main__":
+if __name__ == "__main__":
     # Test function: f(x) = sum(x^2)
-        f = lambda x: np.sum(x**2)
+    f = lambda x: np.sum(x**2)
     
     # Dummy input
-        x = np.array([[1.0, 2.0], [3.0, 4.0]])
+    x = np.array([[1.0, 2.0], [3.0, 4.0]])
     
     # Analytical gradient: d/dx (x^2) = 2x
-        analytic_grad = 2 * x
+    analytic_grad = 2 * x
     
-        check_gradient(f, x, analytic_grad)
+    check_gradient(f, x, analytic_grad)
 
         
