@@ -14,6 +14,8 @@ def eval_numerical_gradient(f, x, eps=1e-5):
         x[idx]=orig_val-eps
         fx_minus=f(x)
         
+        x[idx]=orig_val
+        
         grad[idx]=(fx_plus-fx_minus)/(2*eps)
         it.iternext()
         
